@@ -1,0 +1,103 @@
+html {overflow:auto;height:100%;}
+
+html, body {
+    font-size: 14px !important;
+    font-weight: 300;
+    font-family:'Amethysta', serif !important;
+    /*font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;*/
+    color: #333;
+    background: #c6ccd2  !important;
+}
+
+/*<!-- @media only screen and (min-device-width: 413px) and (max-device-width: 415px) { iPhone6+ Styles }
+@media only screen and (min-device-width: 374px) and (max-device-width: 376px) { div.container {width: 360px;}}
+@media only screen and (min-device-width: 359px) and (max-device-width: 361px) { iPhone6+ Alt Styles }
+@media only screen and (min-device-width: 319px) and (max-device-width: 321px) { iPhone5 or less Styles }-->
+@media only screen and (min-device-width: 374px) and (max-device-width: 376px) { div#container {width: 100%;}}
+
+@media (min-width: 768px) {
+    div#page-content {
+        width: 770px;
+    }}
+
+@media (min-width: 992px) {
+    div#page-content {
+        width: 990px;
+    }}
+
+@media (min-width: 1200px) {
+    div#page-content {
+        width: 1190px;
+    }}
+
+div#container {
+
+    background: white;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 20px;
+    /*border-radius: 12px;
+}*/
+@media (min-width: 768px) {
+    div#page-content {
+        width: 750px;    margin: 0 auto;
+    }}
+
+@media (min-width: 992px) {
+    div#page-content {
+        width: 970px;    margin: 0 auto;
+    }}
+
+@media (min-width: 1200px) {
+    div#page-content {
+        width: 1170px;    margin: 0 auto;
+    }}
+
+div#sidebar{
+
+    float:left;
+    height: 100%;
+    min-width: 150px;
+}
+
+div#page-content {
+
+height: 100%;
+background: white;
+    //width: 75%;
+    //
+    margin: 0 auto;
+    //padding: 50px 25px 50px 25px;
+    //border-radius: 10px;
+    //z-index: 999999;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family:'Amethysta', serif !important;
+    /*font-family: 'Roboto Condensed', sans-serif !important;*/
+    /*font-family:'Fjalla One', sans-serif ;*/
+
+}
+
+.highlighted {
+
+    background-color:#FFFF00;
+
+}
+
+
+div#all {
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    bottom: 0px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+div#page-content div.container {
+    background:white;
+    padding-top: 10px;
+
+}

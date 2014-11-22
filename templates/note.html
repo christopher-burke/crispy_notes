@@ -1,0 +1,42 @@
+{% extends "base.html"%}
+
+{% block title %}{{note.title}}{% endblock %}
+{% block style %}<link rel="stylesheet" href="/static/css/ghfmd.css" />{% endblock %}
+
+{% load note_tags %}
+
+{% block content %}
+    <h1>{{note.title|upper}}</h1>
+
+    <h2>{{note.date|date:"l, F d, Y"}} - {{note.time|time:"h:i A"}}</h2>
+
+    <div id="note">            {{note.note | safe}}        </div>
+
+    <div id="note">
+        {% if tags %}
+            <h2>Tags:</h2>
+            <ul>
+
+                {% for tag in tags %}
+                    <li><a href="/view/tag/{{tag.tag}}">{{tag}}</a></li>
+                {% endfor %}
+
+            </ul>
+        {% endif%}
+    </div>
+    <ul>
+
+
+        <a href="/edit/{{note.id}}">Edit Note</a>
+        <a href="/remove-tag/{{note.id}}">Remove Tags</a>
+
+    </ul>
+
+<br>
+<form action="/action/" method="get">
+    <button name="action" type="submit" value="edit_note+{{note.id}}">EDIT</button>
+    <button name="action" type="submit" value="remove_tags+{{note.id}}">REMOVE TAGS</button>
+</form>
+
+
+{% endblock %}

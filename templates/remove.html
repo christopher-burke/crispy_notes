@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}{{view}} Note{% endblock %}
+
+{% block head %}
+<head>
+    {% block css %}
+    <!-- CSS Files -->
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+        <link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/add.css" />
+    {% endblock %}
+
+    {% block js %}
+    <!-- JavaScript Files -->
+        <script type="text/javascript" src="/static/tinymce/tinymce.min.js"></script>
+        <script type="text/javascript" src="/static/js/tiny_mce_init.js"></script>
+        <script type="text/javascript" src="/static/js/edit_note.js"></script>
+        <script type="text/javascript" src="/static/admin/js/core.js"></script>
+        <script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+        <script type="text/javascript" src="/static/admin/js/jquery.js"></script>
+        <script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+        <script type="text/javascript" src="/static/admin/js/actions.js"></script>
+        <script type="text/javascript" src="/static/admin/js/calendar.js"></script>
+        <script type="text/javascript" src="/static/admin/js/admin/DateTimeShortcuts.js"></script>
+    {% endblock %}
+</head>
+{% endblock %}
+
+{% block content %}
+    <h1>Remove Tags from ""{{note.title}}""</h1>
+    <div id="add-form">
+                <form id="add_note_form" action="" method="post">
+                    {% csrf_token %}
+                {% if tags %}
+                    <h2>Tags:</h2>
+                        <select multiple="multiple" name="remove-tags">
+                        {% for tag in tags %}
+                            <option value="{{tag.id}}">{{tag}}</a></option>
+                        {% endfor %}
+                    </select>
+                {% endif%}
+            <input type="submit" value="Remove Tag">
+        </form>
+    </div>
+{% endblock %}

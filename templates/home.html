@@ -1,0 +1,15 @@
+{% extends "base.html"%}
+
+{% block title %}Home{% endblock %}
+
+{% block style %}<link rel="stylesheet" href="/static/css/ghfmd.css" />{% endblock %}
+
+{% block content %}
+    <div id="main" style="">
+        {% if user.username == 'Guest' %}
+            {% include "login_guest.html" %}
+        {% else %}
+            {% include "login_user.html" %}
+        {% endif%}
+    </div>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% block content %}
+    <div id="main" style="">
+        {% block notes %}
+            {% if nv %}
+                <table>
+                    <tr>
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Date
+                        </th>
+                        <th>
+                            Time
+                        </th>
+                        <th>
+                            Updated
+                        </th>
+                    </tr>
+                <!--{% for noteview  in nv %}
+                        <tr>
+                            <td><a href="{{noteview.NOTE_ID.get_absolute_url}}">{{noteview.NOTE_ID}}</a></td>
+                            <td>{{noteview.NOTE_ID.date}}</td>
+                            <td>{{noteview.NOTE_ID.time}}</td>
+                            <td>{{noteview.views}}</td>
+                        </tr>
+                {% endfor %}-->
+                {% for notelastupdated  in nlu %}
+                        <tr>
+                            <td><a href="{{notelastupdated.NOTE_ID.get_absolute_url}}">{{notelastupdated.NOTE_ID}}</a></td>
+                            <td>{{notelastupdated.NOTE_ID.date}}</td>
+                            <td>{{notelastupdated.NOTE_ID.time}}</td>
+                            <td>{{notelastupdated.updated}}</td>
+                        </tr>
+                {% endfor %}
+                </table>
+            {% endif %}
+            {% if notes %}
+                <h2>Tag Notes</h2>
+                    <div id="notes-table">
+                        <table>
+                            <tr>
+                                <th>
+                                    Title
+                                </th>
+                                <th>
+                                    Date
+                                </th>
+                                <th>
+                                    Time
+                                </th>
+                            </tr>
+                        {% for note  in notes %}
+                                <tr>
+                                    <td><a href="{{note.get_absolute_url}}">{{note}}</a></td>
+                                    <td>{{note.date}}</td>
+                                    <td>{{note.time}}</td>
+                                </tr>
+
+                        {% endfor %}
+                        </table>
+                    </div>
+            {% endif %}
+            <h2>Tags</h2>
+                <p>
+                    {% for tag in count_tags %}
+                        <a href="/view/tag/{{tag.0.tag}}">{{tag.0}}</a> ({{tag.1}})
+                    {% endfor %}
+                </p>
+        {% endblock %}
+    </div>
+{% endblock %}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <!--  ADDS for BootStrap and JQuery -->
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <!-- END ADDS -->
+
+        <link rel="stylesheet" href="/static/css/style.css" />
+        <link href="http://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Amethysta" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Fjalla+One|Titillium+Web|Roboto|Roboto+Condensed|Roboto+Slab' rel='stylesheet' type='text/css'>
+        <!-- Additional Head and Style Blocks for other templates -->
+        {% block head %}{% endblock %}
+        {% block style %}{% endblock %}
+        <!-- Additional Head and Style Blocks for other templates -->
+        <title>{% block title %}CrisB Notes{% endblock %}</title>
+
+    </head>
+
+    <body>
+        {% include "navbar.html" %}
+        <div id="all">
+            <div id="page-content">
+                <div class="container">
+                    {% block content%} {% endblock%}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

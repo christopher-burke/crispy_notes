@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% load note_tags %}
+{% block style %}<link rel="stylesheet" href="/static/css/ghfmd.css" />{% endblock %}
+{% block content %}
+    {% include "sidebar.html" %}
+    <div id="main" style="padding-left: 150px;">
+     <form type="get" action="/root/">
+         <input type="text" name="q">
+         <button type="submit">Search</button>
+     </form>
+
+     <p>Your query "{{ search_query }}" has returned {{ notes.count }} result{{ notes|pluralize }}</p>
+
+     {% for note in notes %}
+        <ul>
+
+            {% with note.title|safe as text %}
+                <li><a href="/view/{{note.pk}}?search_query={{search_query}}">{% cb_highlight note.object.title with search_query title True %}</a> - {{note.object.date}}</li>
+                <div id="name">
+                    {% cb_highlight note.object.note with search_query %}</a> - {{note.object.date}}
+                </div>
+            {% endwith %}
+        </ul>
+
+     {% endfor %}
+ </div>
+{% endblock %}

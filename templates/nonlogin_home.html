@@ -1,0 +1,21 @@
+{% extends "base.html"%}
+
+{% block title %}Home{% endblock %}
+
+{% block style %}<link rel="stylesheet" href="/static/css/ghfmd.css" />{% endblock %}
+
+{% block content %}
+    <div id="main" style="">
+
+        <div id="" class="login-info">
+            <p>
+                {% if user.username == 'Guest' %}
+                    Welcome {{ user.username }} <a href="/accounts/login/">Login</a>
+                {% else %}
+                    Logged in as {{ user.username }} <a href="/logout/">Logout</a>
+                {% endif%}
+            </p>
+        </div>
+        {% include "auth_form.html" %}
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+body{
+    background:#c6ccd2;
+}
+
+div#content {
+    background: white;
+    margin: 0 auto;
+    padding: 50px 25px 50px 25px;
+    max-width: 90%;
+    width: 90%;
+    border-radius: 10px;
+}
+
+div#add-form{
+
+}
+
+input#id_title, input#id_time, input#id_date {
+
+    width: 250px !important;
+    height: 25px !important;
+
+}
+
+div#add-form {
+
+    padding: 10px 25px 50px 25px;
+
+}
+
+form#add_note_form  {
+    width: 100%;
+    }
+
+div.container li{
+
+    font-size: 14px !important;
+
+}
